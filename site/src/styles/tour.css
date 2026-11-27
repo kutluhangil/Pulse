@@ -118,7 +118,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .notice { position: absolute; top: 40px; right: 12px; width: 330px; display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 16px; background: rgba(240, 242, 246, .9); backdrop-filter: blur(30px); color: #1d1f24; box-shadow: 0 20px 40px -10px rgba(0,0,0,.45); transform: translateX(120%); transition: transform .5s cubic-bezier(.22,1,.36,1); z-index: 45; }
 .notice.in { transform: none; }
-.notice .app-ic { width: 34px; height: 34px; border-radius: 9px; flex: none; background: url('/icon-256.png') center/cover; }
+.notice .app-ic { width: 34px; height: 34px; flex: none; background: url('/icon-256.png') center/contain no-repeat; }
 .notice b { font-size: 13px; } .notice p { font-size: 12.5px; margin-top: 2px; color: #3a3d44; }
 .notice small { margin-left: auto; font-size: 11px; color: #8a8d94; }
 

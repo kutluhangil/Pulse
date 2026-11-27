@@ -21,7 +21,7 @@ The plan is in `docs/PLAN.md` and the API in `docs/API.md`.
   - `PulseUI`: panel, settings, menu bar renderer, `Localizable.xcstrings`.
 - `scripts/`:
   - `release-macos.sh`: Release build, DMG, `--install`.
-  - `make-icon.swift`
+  - `make-icon.swift`: builds every icon (macOS AppIcon, Linux hicolor PNGs, site favicon/touch/mark) from `docs/design/logo.png`.
   - `l10n.py`: regenerates the string catalog from `L("…")` calls and `l10n/tr.json`.
 
 ## Commands

@@ -163,7 +163,7 @@ cd site && npm test && npx playwright test         # site: unit and end-to-end t
 ./scripts/site-deploy.sh                           # build, test and publish the site (Cloudflare Tunnel)
 cd app && xcodegen generate && swiftlint lint --strict
 python3 scripts/l10n.py app/Packages/PulseKit/l10n/tr.json   # rebuild the string catalog after adding L("…")
-swift scripts/make-icon.swift                      # redraw the app icon
+swift scripts/make-icon.swift                      # all icons from docs/design/logo.png
 ```
 
 Agent environment: `PULSE_LISTEN`, `PULSE_TOKEN`, `PULSE_NO_AUTH` (loopback only), `PULSE_HOST_PROC`, `PULSE_HOST_SYS`, `PULSE_HOST_ROOT`, `DOCKER_HOST`, `PULSE_PROBES`, `PULSE_NET_IFACE`.
