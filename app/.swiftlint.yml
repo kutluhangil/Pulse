@@ -1,0 +1,25 @@
+included:
+  - App
+  - Packages/PulseKit/Sources
+  - Packages/PulseKit/Tests
+excluded:
+  - build
+  - Packages/PulseKit/.build
+disabled_rules:
+  - trailing_comma              # trailing commas keep diffs small
+  - optional_data_string_conversion # String(decoding:) is intentional: lossy decode of logs and tokens
+identifier_name:
+  min_length: 1                 # JSON fields mirror the agent schema (v, t, rx, tx)
+  max_length: 50
+  excluded: [L]                 # L("…") is the package-local localization helper
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
+  ignores_interpolated_strings: true
+cyclomatic_complexity:
+  ignores_case_statements: true # exhaustive switch mappings (wording, levels)
+large_tuple:
+  warning: 3
+function_parameter_count:
+  warning: 7

@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Secrets (never commit)
+deploy/.env
+*.env
+!deploy/.env.example
+
+# Go
+agent/bin/
+agent/coverage.out
+
+# Xcode / SwiftPM
+app/Pulse.xcodeproj/
+app/build/
+app/DerivedData/
+.build/
+.swiftpm/
+xcuserdata/
+*.xcuserstate
+
+# Release artifacts
+dist/

@@ -1,0 +1,166 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "About Pulse": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse hakkında"
+          }
+        }
+      }
+    },
+    "Check for Updates": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri denetle"
+          }
+        }
+      }
+    },
+    "Container Logs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konteyner günlükleri"
+          }
+        }
+      }
+    },
+    "Copy Status Summary": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durum özetini kopyala"
+          }
+        }
+      }
+    },
+    "For 1 Hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 saat"
+          }
+        }
+      }
+    },
+    "For 8 Hours": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8 saat"
+          }
+        }
+      }
+    },
+    "Open Pulse": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse'u aç"
+          }
+        }
+      }
+    },
+    "Open Site": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siteyi aç"
+          }
+        }
+      }
+    },
+    "Pause Notifications": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirimleri duraklat"
+          }
+        }
+      }
+    },
+    "Pulse Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse Ayarları"
+          }
+        }
+      }
+    },
+    "Quit Pulse": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse'tan çık"
+          }
+        }
+      }
+    },
+    "Reconnect": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden bağlan"
+          }
+        }
+      }
+    },
+    "Resume Now": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi sürdür"
+          }
+        }
+      }
+    },
+    "SSH into Server": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucuya SSH ile bağlan"
+          }
+        }
+      }
+    },
+    "Settings…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar…"
+          }
+        }
+      }
+    },
+    "Until Tomorrow": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yarın sabaha kadar"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

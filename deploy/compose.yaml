@@ -1,0 +1,62 @@
+# Pulse agent on the home server.
+# Install / update from the Mac:  ./deploy/deploy.sh
+# The agent listens on 127.0.0.1:9123 only; deploy.sh publishes it to the
+# tailnet with `tailscale serve` (HTTPS, tailnet only). Nothing is reachable
+# from the LAN or the internet, and there is no Cloudflare tunnel on purpose.
+name: pulse
+
+services:
+  agent:
+    build:
+      context: ../agent
+      args:
+        VERSION: ${PULSE_VERSION:-dev}
+    image: pulse-agent:local
+    restart: unless-stopped
+    # Host network so /proc/net reflects the real interfaces and the listener
+    # can bind to the host's loopback.
+    network_mode: host
+    environment:
+      PULSE_LISTEN: 127.0.0.1:9123
+      PULSE_HOST_PROC: /host/proc
+      PULSE_HOST_SYS: /host/sys
+      PULSE_HOST_ROOT: /host/root
+      DOCKER_HOST: tcp://127.0.0.1:2375
+      PULSE_TOKEN: ${PULSE_TOKEN:?deploy/.env must define PULSE_TOKEN}
+      PULSE_PROBES: ${PULSE_PROBES:-}
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/host/root:ro,rslave
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 64m
+    cpus: 0.25
+    pids_limit: 64
+    depends_on: [docker-proxy]
+
+  # Read-only gate in front of the Docker socket: only GET on /containers,
+  # /version and /_ping. No POST, so nothing can be started, stopped or exec'd.
+  docker-proxy:
+    image: tecnativa/docker-socket-proxy:3.4
+    restart: unless-stopped
+    environment:
+      CONTAINERS: 1
+      VERSION: 1
+      PING: 1
+      EVENTS: 0
+      INFO: 0
+      POST: 0
+    ports:
+      - "127.0.0.1:2375:2375"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    read_only: true
+    tmpfs:
+      - /run
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 64m
+    pids_limit: 64

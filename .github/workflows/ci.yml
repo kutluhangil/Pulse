@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  agent:
+    name: Agent (Go)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agent
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: agent/go.mod
+          cache: false
+      - run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+      - run: go vet ./...
+      - run: go test -race ./...
+      - run: go run honnef.co/go/tools/cmd/staticcheck@latest ./...
+      - run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+      - name: Build image
+        run: docker build --build-arg VERSION=ci -t pulse-agent:ci .
+
+  app:
+    name: App (Swift)
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v7
+      - run: brew install xcodegen swiftlint
+      - name: Lint
+        working-directory: app
+        run: swiftlint lint --strict
+      - name: Test PulseKit
+        working-directory: app/Packages/PulseKit
+        run: swift test
+      - name: Build app
+        working-directory: app
+        run: |
+          xcodegen generate
+          xcodebuild -project Pulse.xcodeproj -scheme Pulse -configuration Release -derivedDataPath build/DerivedData -quiet build

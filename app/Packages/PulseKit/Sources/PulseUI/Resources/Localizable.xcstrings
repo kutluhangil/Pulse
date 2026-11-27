@@ -1,0 +1,2056 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ %@ · received %@ · sent %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@ · alınan %3$@ · gönderilen %4$@"
+          }
+        }
+      }
+    },
+    "%@ cooled down": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ soğudu"
+          }
+        }
+      }
+    },
+    "%@ disk has room again": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ diskinde yeniden yer var"
+          }
+        }
+      }
+    },
+    "%@ disk is filling up": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ diski doluyor"
+          }
+        }
+      }
+    },
+    "%@ fan · %@–%@ RPM. Pulse only reads it; the server controls the fan.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ fanı · %2$@–%3$@ RPM. Pulse yalnız okur; fanı sunucu yönetir."
+          }
+        }
+      }
+    },
+    "%@ is back": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yeniden çevrimiçi"
+          }
+        }
+      }
+    },
+    "%@ is back up": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yeniden çalışıyor"
+          }
+        }
+      }
+    },
+    "%@ is down": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ çalışmıyor"
+          }
+        }
+      }
+    },
+    "%@ is low on memory": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ belleği azaldı"
+          }
+        }
+      }
+    },
+    "%@ is running hot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ısınıyor"
+          }
+        }
+      }
+    },
+    "%@ is unreachable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yanıt vermiyor"
+          }
+        }
+      }
+    },
+    "%@ memory is back to normal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ belleği normale döndü"
+          }
+        }
+      }
+    },
+    "%@ needs a restart": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yeniden başlatılmalı"
+          }
+        }
+      }
+    },
+    "%@ restarted": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yeniden başlatıldı"
+          }
+        }
+      }
+    },
+    "%@ used · %@%%": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ dolu · %%%2$@"
+          }
+        }
+      }
+    },
+    "%@ · health %lld": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · sağlık %2$lld"
+          }
+        }
+      }
+    },
+    "%lld cores · max %@°C": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld çekirdek · en çok %2$@°C"
+          }
+        }
+      }
+    },
+    "%lld ms": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ms"
+          }
+        }
+      }
+    },
+    "%lld running · %lld stopped": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld çalışıyor · %2$lld durdu"
+          }
+        }
+      }
+    },
+    "%lld security": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld güvenlik"
+          }
+        }
+      }
+    },
+    "%lld threads": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld thread"
+          }
+        }
+      }
+    },
+    "1 hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 saat"
+          }
+        }
+      }
+    },
+    "24 hours": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "24 saat"
+          }
+        }
+      }
+    },
+    "8 hours": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8 saat"
+          }
+        }
+      }
+    },
+    "A container stops or turns unhealthy": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir konteyner durur ya da sağlıksızlaşır"
+          }
+        }
+      }
+    },
+    "A little character that runs while the server is live": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucu canlıyken hareket eden küçük bir karakter"
+          }
+        }
+      }
+    },
+    "A site fails two checks in a row": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir site art arda iki denetimde yanıt vermez"
+          }
+        }
+      }
+    },
+    "A site is down": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir site çalışmıyor"
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hakkında"
+          }
+        }
+      }
+    },
+    "Add one more metric": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir metrik daha ekle"
+          }
+        }
+      }
+    },
+    "Adds the current download speed": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anlık indirme hızını ekler"
+          }
+        }
+      }
+    },
+    "Agent %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan %@"
+          }
+        }
+      }
+    },
+    "Agent address": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan adresi"
+          }
+        }
+      }
+    },
+    "Agent is not running": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan çalışmıyor"
+          }
+        }
+      }
+    },
+    "Agent schema v%lld is not supported, update Pulse": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan şeması v%lld desteklenmiyor, Pulse'u güncelle"
+          }
+        }
+      }
+    },
+    "Alert after 30 s above this": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 sn bunun üstünde kalınca uyar"
+          }
+        }
+      }
+    },
+    "Alert after a minute above this": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir dakika bunun üstünde kalınca uyar"
+          }
+        }
+      }
+    },
+    "Alert when the disk passes this": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk bunu geçince uyar"
+          }
+        }
+      }
+    },
+    "Alerts": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uyarı"
+          }
+        }
+      }
+    },
+    "Alerts arrive as macOS notifications": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uyarılar macOS bildirimi olarak gelir"
+          }
+        }
+      }
+    },
+    "Allow": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin ver"
+          }
+        }
+      }
+    },
+    "Animated icon": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hareketli simge"
+          }
+        }
+      }
+    },
+    "Auto": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oto"
+          }
+        }
+      }
+    },
+    "Both": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İkisi"
+          }
+        }
+      }
+    },
+    "CPU at %@ °C.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlemci %@ °C."
+          }
+        }
+      }
+    },
+    "CPU temperature": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlemci sıcaklığı"
+          }
+        }
+      }
+    },
+    "CPU temperature is back to normal.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlemci sıcaklığı normale döndü."
+          }
+        }
+      }
+    },
+    "CPU usage": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlemci kullanımı"
+          }
+        }
+      }
+    },
+    "Cat": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kedi"
+          }
+        }
+      }
+    },
+    "Choose an icon, live data, or both": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simge, canlı veri ya da ikisi"
+          }
+        }
+      }
+    },
+    "Choose another metric, or leave this slot hidden": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başka bir metrik seç ya da bu yuvayı gizle"
+          }
+        }
+      }
+    },
+    "Choose temperature, CPU, memory or another metric": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıcaklık, işlemci, bellek ya da başka bir metrik seç"
+          }
+        }
+      }
+    },
+    "Columns": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sütunlar"
+          }
+        }
+      }
+    },
+    "Columns or a single line": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sütunlar ya da tek satır"
+          }
+        }
+      }
+    },
+    "Connect Pulse to your server": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse'u sunucuna bağla"
+          }
+        }
+      }
+    },
+    "Connecting": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlanıyor"
+          }
+        }
+      }
+    },
+    "Connecting…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlanıyor…"
+          }
+        }
+      }
+    },
+    "Connection": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantı"
+          }
+        }
+      }
+    },
+    "Connection closed": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantı kapandı"
+          }
+        }
+      }
+    },
+    "Container %@ needs attention": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ konteyneri sorunlu"
+          }
+        }
+      }
+    },
+    "Container %@ recovered": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ konteyneri düzeldi"
+          }
+        }
+      }
+    },
+    "Container needs attention": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sorunlu konteyner"
+          }
+        }
+      }
+    },
+    "Containers": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konteynerler"
+          }
+        }
+      }
+    },
+    "Copy all": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümünü kopyala"
+          }
+        }
+      }
+    },
+    "Copy name": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adı kopyala"
+          }
+        }
+      }
+    },
+    "Critical": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kritik"
+          }
+        }
+      }
+    },
+    "Data layout": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veri düzeni"
+          }
+        }
+      }
+    },
+    "Disk": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk"
+          }
+        }
+      }
+    },
+    "Disk I/O": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk G/Ç"
+          }
+        }
+      }
+    },
+    "Disk almost full": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk neredeyse dolu"
+          }
+        }
+      }
+    },
+    "Disk read %@ · write %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk okuma %1$@ · yazma %2$@"
+          }
+        }
+      }
+    },
+    "Disk usage": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk kullanımı"
+          }
+        }
+      }
+    },
+    "Disk use at %@ %%.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk kullanımı %%%@."
+          }
+        }
+      }
+    },
+    "Docker monitoring is off": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docker izleme kapalı"
+          }
+        }
+      }
+    },
+    "Docker unreachable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docker'a ulaşılamıyor"
+          }
+        }
+      }
+    },
+    "Docker unreachable: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Docker'a ulaşılamıyor: %@"
+          }
+        }
+      }
+    },
+    "Download speed": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndirme hızı"
+          }
+        }
+      }
+    },
+    "Enter the agent address and token. Run ./deploy/deploy.sh --copy-token on your Mac to copy the token.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan adresini ve token'ı gir. Token'ı kopyalamak için Mac'te ./deploy/deploy.sh --copy-token çalıştır."
+          }
+        }
+      }
+    },
+    "Excellent": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mükemmel"
+          }
+        }
+      }
+    },
+    "Fair": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orta"
+          }
+        }
+      }
+    },
+    "Fan": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fan"
+          }
+        }
+      }
+    },
+    "First status metric": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birinci metrik"
+          }
+        }
+      }
+    },
+    "Follow system": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistemi izle"
+          }
+        }
+      }
+    },
+    "Follow system, restart Pulse after changing": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistemi izler, değiştirince Pulse'u yeniden başlat"
+          }
+        }
+      }
+    },
+    "Free space": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boş alan"
+          }
+        }
+      }
+    },
+    "From ./deploy/deploy.sh --copy-token, stays on this Mac": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "./deploy/deploy.sh --copy-token ile alınır, bu Mac'te kalır"
+          }
+        }
+      }
+    },
+    "General": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel"
+          }
+        }
+      }
+    },
+    "Good": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İyi"
+          }
+        }
+      }
+    },
+    "Granted": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin verildi"
+          }
+        }
+      }
+    },
+    "Health score adapted from Mole by tw93.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sağlık puanı tw93'ün Mole uygulamasından uyarlandı."
+          }
+        }
+      }
+    },
+    "Heartbeat": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nabız"
+          }
+        }
+      }
+    },
+    "Heavy disk I/O": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yoğun disk G/Ç"
+          }
+        }
+      }
+    },
+    "Heavy swap use": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yoğun swap"
+          }
+        }
+      }
+    },
+    "Hidden": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gizli"
+          }
+        }
+      }
+    },
+    "High": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüksek"
+          }
+        }
+      }
+    },
+    "High CPU": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüksek işlemci"
+          }
+        }
+      }
+    },
+    "High Lag": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çok gecikme"
+          }
+        }
+      }
+    },
+    "High memory": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüksek bellek"
+          }
+        }
+      }
+    },
+    "Host and port on your tailnet": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tailnet'teki adres ve port"
+          }
+        }
+      }
+    },
+    "Hot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıcak"
+          }
+        }
+      }
+    },
+    "Icon": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simge"
+          }
+        }
+      }
+    },
+    "Installed updates are waiting for a reboot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulan güncellemeler yeniden başlatma bekliyor"
+          }
+        }
+      }
+    },
+    "Installed updates take effect after a reboot.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulan güncellemeler yeniden başlatınca devreye girer."
+          }
+        }
+      }
+    },
+    "Invalid server address": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geçersiz sunucu adresi"
+          }
+        }
+      }
+    },
+    "It stopped, crashed or turned unhealthy.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durdu, çöktü ya da sağlıksız duruma geçti."
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil"
+          }
+        }
+      }
+    },
+    "Last data %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son veri %@"
+          }
+        }
+      }
+    },
+    "Launch at login": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Girişte başlat"
+          }
+        }
+      }
+    },
+    "Leave empty to use port 9090 on the agent host": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boş bırakılırsa ajan adresinde 9090 portu kullanılır"
+          }
+        }
+      }
+    },
+    "Leave empty to use port 9443 on the agent host": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boş bırakılırsa ajan adresinde 9443 portu kullanılır"
+          }
+        }
+      }
+    },
+    "Left-click opens the tools menu, right-click opens the panel": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sol tık araç menüsünü, sağ tık paneli açar"
+          }
+        }
+      }
+    },
+    "Lines": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satır"
+          }
+        }
+      }
+    },
+    "Live": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlı"
+          }
+        }
+      }
+    },
+    "Live data": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlı veri"
+          }
+        }
+      }
+    },
+    "Live data is flowing again.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlı veri yeniden akıyor."
+          }
+        }
+      }
+    },
+    "Live monitor for your home server. Free software under GPL-3.0.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ev sunucun için canlı izleme. GPL-3.0 lisanslı özgür yazılım."
+          }
+        }
+      }
+    },
+    "Live, one update per second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlı, saniyede bir güncelleme"
+          }
+        }
+      }
+    },
+    "Load average 1/5/15 min: %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ortalama yük 1/5/15 dk: %@"
+          }
+        }
+      }
+    },
+    "Low Lag": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az gecikme"
+          }
+        }
+      }
+    },
+    "Managed automatically": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otomatik yönetiliyor"
+          }
+        }
+      }
+    },
+    "Memory": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bellek"
+          }
+        }
+      }
+    },
+    "Memory limit %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bellek sınırı %@"
+          }
+        }
+      }
+    },
+    "Memory usage": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bellek kullanımı"
+          }
+        }
+      }
+    },
+    "Memory use at %@ %%.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bellek kullanımı %%%@."
+          }
+        }
+      }
+    },
+    "Menu Bar": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü çubuğu"
+          }
+        }
+      }
+    },
+    "Menu bar content": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü çubuğu içeriği"
+          }
+        }
+      }
+    },
+    "Needs Attention": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlgi bekliyor"
+          }
+        }
+      }
+    },
+    "Network": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ağ"
+          }
+        }
+      }
+    },
+    "Network unavailable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ağ yok"
+          }
+        }
+      }
+    },
+    "No containers": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konteyner yok"
+          }
+        }
+      }
+    },
+    "No data for a while": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir süredir veri gelmiyor"
+          }
+        }
+      }
+    },
+    "No data from the Pulse agent for over a minute.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse ajanından bir dakikadır veri gelmiyor."
+          }
+        }
+      }
+    },
+    "No data from the agent for a minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajandan bir dakika veri gelmez"
+          }
+        }
+      }
+    },
+    "No log output": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günlük çıktısı yok"
+          }
+        }
+      }
+    },
+    "No sensor": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sensör yok"
+          }
+        }
+      }
+    },
+    "None": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yok"
+          }
+        }
+      }
+    },
+    "Normal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "Not set up": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulmadı"
+          }
+        }
+      }
+    },
+    "Notifications": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirimler"
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı"
+          }
+        }
+      }
+    },
+    "Offline": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çevrimdışı"
+          }
+        }
+      }
+    },
+    "Open Portainer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portainer'da aç"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarları aç"
+          }
+        }
+      }
+    },
+    "Opened from the panel and the tools menu": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panelden ve araç menüsünden açılır"
+          }
+        }
+      }
+    },
+    "Overheating": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aşırı ısınma"
+          }
+        }
+      }
+    },
+    "Panel shortcut": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel kısayolu"
+          }
+        }
+      }
+    },
+    "Pause notifications": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirimleri duraklat"
+          }
+        }
+      }
+    },
+    "Paused until %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ saatine kadar duraklatıldı"
+          }
+        }
+      }
+    },
+    "Quit Pulse": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse'tan çık"
+          }
+        }
+      }
+    },
+    "Reconnecting…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden bağlanıyor…"
+          }
+        }
+      }
+    },
+    "Reload": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenile"
+          }
+        }
+      }
+    },
+    "Restart": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden başlat"
+          }
+        }
+      }
+    },
+    "Restart required": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden başlatma gerekli"
+          }
+        }
+      }
+    },
+    "Restarted %lld times": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld kez yeniden başladı"
+          }
+        }
+      }
+    },
+    "Retry": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden dene"
+          }
+        }
+      }
+    },
+    "Running containers": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çalışan konteynerler"
+          }
+        }
+      }
+    },
+    "Runs faster as the server gets busier": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucu yoğunlaştıkça hızlanır"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydet"
+          }
+        }
+      }
+    },
+    "Second status metric": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İkinci metrik"
+          }
+        }
+      }
+    },
+    "Security updates pending": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güvenlik güncellemesi bekliyor"
+          }
+        }
+      }
+    },
+    "Send notifications": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim gönder"
+          }
+        }
+      }
+    },
+    "Server": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucu"
+          }
+        }
+      }
+    },
+    "Server answered HTTP %lld": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucu HTTP %lld döndü"
+          }
+        }
+      }
+    },
+    "Server not found (is Tailscale on?)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucu bulunamadı (Tailscale açık mı?)"
+          }
+        }
+      }
+    },
+    "Server status is in the menu bar when you reach the desktop": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masaüstüne geldiğinde sunucu durumu menü çubuğunda hazır"
+          }
+        }
+      }
+    },
+    "Server unreachable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunucuya ulaşılamıyor"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar"
+          }
+        }
+      }
+    },
+    "Show all": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümü"
+          }
+        }
+      }
+    },
+    "Show less": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha az"
+          }
+        }
+      }
+    },
+    "Show live network speed": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canlı ağ hızını göster"
+          }
+        }
+      }
+    },
+    "Show logs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günlükleri göster"
+          }
+        }
+      }
+    },
+    "Silence alerts for a while, the panel keeps updating": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uyarıları bir süre sustur, panel güncellenmeye devam eder"
+          }
+        }
+      }
+    },
+    "Single line": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tek satır"
+          }
+        }
+      }
+    },
+    "Sites": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siteler"
+          }
+        }
+      }
+    },
+    "Speed %@%%": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hız %%%@"
+          }
+        }
+      }
+    },
+    "Speed follows CPU load": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hız işlemci yüküne göre"
+          }
+        }
+      }
+    },
+    "Swap %@ of %@ · cache %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swap %1$@ / %2$@ · önbellek %3$@"
+          }
+        }
+      }
+    },
+    "Swap left and right clicks": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sol ve sağ tıkı değiştir"
+          }
+        }
+      }
+    },
+    "TLS error": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TLS hatası"
+          }
+        }
+      }
+    },
+    "Temp": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isı"
+          }
+        }
+      }
+    },
+    "Test": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sına"
+          }
+        }
+      }
+    },
+    "The agent rejected the token": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajan token'ı reddetti"
+          }
+        }
+      }
+    },
+    "The site failed two checks in a row.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Site art arda iki denetimde yanıt vermedi."
+          }
+        }
+      }
+    },
+    "Third status metric": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Üçüncü metrik"
+          }
+        }
+      }
+    },
+    "Timed out": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaman aşımı"
+          }
+        }
+      }
+    },
+    "Token": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Token"
+          }
+        }
+      }
+    },
+    "Token rejected": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Token reddedildi"
+          }
+        }
+      }
+    },
+    "Turn every Pulse alert on or off": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm Pulse uyarılarını aç ya da kapat"
+          }
+        }
+      }
+    },
+    "Updates": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncelleme"
+          }
+        }
+      }
+    },
+    "Upload %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "↑ %@"
+          }
+        }
+      }
+    },
+    "Version %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm %@"
+          }
+        }
+      }
+    },
+    "Warm": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ilık"
+          }
+        }
+      }
+    },
+    "Write %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yazma %@"
+          }
+        }
+      }
+    },
+    "busy": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yoğun"
+          }
+        }
+      }
+    },
+    "exit %lld": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çıkış %lld"
+          }
+        }
+      }
+    },
+    "free": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "boş"
+          }
+        }
+      }
+    },
+    "health": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sağlık"
+          }
+        }
+      }
+    },
+    "high": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çok yoğun"
+          }
+        }
+      }
+    },
+    "idle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "boşta"
+          }
+        }
+      }
+    },
+    "normal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "normal"
+          }
+        }
+      }
+    },
+    "stopped": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "durdu"
+          }
+        }
+      }
+    },
+    "up %lldd %lldh": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lldg %2$lldsa açık"
+          }
+        }
+      }
+    },
+    "up %lldh %lldm": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lldsa %2$llddk açık"
+          }
+        }
+      }
+    },
+    "up %lldm": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dk açık"
+          }
+        }
+      }
+    },
+    "⌃⌥⌘P shows or hides the panel from any app": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⌃⌥⌘P her uygulamadan paneli açar ya da kapatır"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
