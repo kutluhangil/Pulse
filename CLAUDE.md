@@ -2,7 +2,9 @@
 
 Pulse is a live monitor for the home server `macmini-server`. It has two parts:
 - a Go agent (`agent/`) running on the server,
-- a SwiftUI menu bar app (`app/`) running on the Mac.
+- a SwiftUI menu bar app (`app/`) running on the Mac,
+- a GTK 4 / libadwaita app (`linux/`, Python) for Linux desktops,
+- the site `pulse.kutluhangil.dev` (`site/`, Astro, Cloudflare Tunnel `pulse-site`).
 
 The plan is in `docs/PLAN.md` and the API in `docs/API.md`.
 
@@ -31,12 +33,16 @@ The plan is in `docs/PLAN.md` and the API in `docs/API.md`.
 | Swift tests | `cd app/Packages/PulseKit && swift test` |
 | Lint | `cd app && swiftlint lint --strict` |
 | Build and install the app | `./scripts/release-macos.sh --install` |
+| Linux tests + .deb | `docker --context macmini buildx build -f linux/packaging/Dockerfile --target deb --output dist/linux .` (no Docker Desktop needed; amd64 on the server) |
+| Site | `./scripts/site-deploy.sh` (build, unit + Playwright tests, compose up on the server, health check) |
+| Release | `./scripts/release-macos.sh` → `dist/Pulse-<v>.dmg`; a `v*` tag builds the agent image and the `.deb` in CI |
 | Configure the app | `<token Pulse.app/Contents/MacOS/Pulse --configure <host:9123> --ssh user@host --login` |
 | Strings | after adding an `L("…")`, add its Turkish to `app/Packages/PulseKit/l10n/tr.json`, then run `python3 scripts/l10n.py app/Packages/PulseKit/l10n/tr.json` |
 
 ## Rules
 - The agent never listens on `0.0.0.0` and never goes through Cloudflare. It is reached only through `tailscale serve`, the same way as Portainer.
 - The Docker socket stays behind `docker-socket-proxy` with `POST=0`. The agent is read-only and never writes to the fan (`macfanctld` stays in charge).
-- Change the schema in `agent/internal/model/snapshot.go`, `PulseCore/Snapshot.swift` and `docs/API.md` together. Bump `v` on breaking changes.
+- Change the schema in `agent/internal/model/snapshot.go`, `PulseCore/Snapshot.swift`, `linux/pulse_monitor/model.py` and `docs/API.md` together. Bump `v` on breaking changes.
 - Keep the panel's SwiftUI view alive only while the panel is open, so idle CPU stays low.
 - Commit or push only when Kutluhan explicitly asks, with no AI attribution.
+- Linux strings: every `_("…")` needs its Turkish in `linux/pulse_monitor/tr.json` (a test enforces it). Version lives in `linux/pulse_monitor/__init__.py`, `app/project.yml` and `site/src/data/release.ts`.

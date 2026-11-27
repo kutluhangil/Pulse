@@ -491,6 +491,36 @@
         }
       }
     },
+    "Check Now": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi denetle"
+          }
+        }
+      }
+    },
+    "Check for updates automatically": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri kendiliğinden denetle"
+          }
+        }
+      }
+    },
+    "Checking GitHub…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub denetleniyor…"
+          }
+        }
+      }
+    },
     "Choose an icon, live data, or both": {
       "localizations": {
         "tr": {
@@ -651,6 +681,16 @@
         }
       }
     },
+    "Could not reach GitHub": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub'a ulaşılamadı"
+          }
+        }
+      }
+    },
     "Critical": {
       "localizations": {
         "tr": {
@@ -757,6 +797,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Docker'a ulaşılamıyor: %@"
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndir"
           }
         }
       }
@@ -1181,6 +1231,16 @@
         }
       }
     },
+    "Looks for a new release on GitHub once a day": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günde bir kez GitHub'da yeni sürüm arar"
+          }
+        }
+      }
+    },
     "Low Lag": {
       "localizations": {
         "tr": {
@@ -1477,6 +1537,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ saatine kadar duraklatıldı"
+          }
+        }
+      }
+    },
+    "Pulse %@ is available": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse %@ çıktı"
+          }
+        }
+      }
+    },
+    "Pulse %@ is up to date": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse %@ güncel"
           }
         }
       }

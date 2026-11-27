@@ -10,6 +10,7 @@ struct MenuActions {
     var copySummary: () -> Void
     var reconnect: () -> Void
     var pauseNotifications: (TimeInterval?) -> Void   // nil resumes
+    var checkUpdates: () -> Void
     var about: () -> Void
     var quit: () -> Void
 }
@@ -17,10 +18,17 @@ struct MenuActions {
 /// The right-click tools menu (Mole-style: SF Symbol on every row).
 @MainActor
 enum StatusMenu {
-    static func build(monitor: Monitor, prefs: Preferences, actions: MenuActions, openPanel: @escaping () -> Void) -> NSMenu {
+    static func build(monitor: Monitor, prefs: Preferences, updater: Updater, actions: MenuActions,
+                      openPanel: @escaping () -> Void) -> NSMenu {
         let menu = NSMenu()
         menu.autoenablesItems = false
         let s = monitor.snapshot
+
+        if let release = updater.available {
+            menu.addItem(ActionItem(String(localized: "Update to Pulse \(release.version.description)…"),
+                                    symbol: "arrow.down.circle.fill") { actions.open(release.downloadURL ?? release.pageURL) })
+            menu.addItem(.separator())
+        }
 
         menu.addItem(ActionItem(String(localized: "Open Pulse"), symbol: "rectangle.grid.2x2", action: openPanel))
         menu.addItem(ActionItem(String(localized: "Settings…"), symbol: "gearshape", key: ",", action: actions.openSettings))
@@ -46,9 +54,7 @@ enum StatusMenu {
         menu.addItem(pauseItem(prefs: prefs, actions: actions))
         menu.addItem(.separator())
 
-        menu.addItem(ActionItem(String(localized: "Check for Updates"), symbol: "arrow.down.circle") {
-            actions.open(URL(string: "https://github.com/kutluhangil/Pulse/releases")!)
-        })
+        menu.addItem(ActionItem(String(localized: "Check for Updates…"), symbol: "arrow.down.circle", action: actions.checkUpdates))
         menu.addItem(ActionItem(String(localized: "About Pulse"), symbol: "info.circle", action: actions.about))
         menu.addItem(.separator())
         menu.addItem(ActionItem(String(localized: "Quit Pulse"), symbol: "rectangle.portrait.and.arrow.right", key: "q",
@@ -125,7 +131,9 @@ extension NSMenuItem {
     /// macOS 27 hides menu item images by default; Pulse's tools menu keeps
     /// them, like Mole's.
     func alwaysShowImage() {
+        #if compiler(>=6.4) // macOS 27 SDK; older SDKs show images anyway
         if #available(macOS 27, *) { preferredImageVisibility = .visible }
+        #endif
     }
 }
 

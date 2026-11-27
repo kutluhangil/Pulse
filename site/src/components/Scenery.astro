@@ -1,0 +1,129 @@
+---
+// Pulse's own illustrations for the story (no photos): a blue-hour sky over the
+// hills with a lit house (the home server), and a valley for the demo panel.
+interface Props {
+  kind: 'sky' | 'hills' | 'valley' | 'valley-fg';
+  class?: string;
+}
+const { kind, class: cls } = Astro.props;
+
+function rand(seed: number) {
+  return () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+}
+const r = rand(7);
+const stars = Array.from({ length: 110 }, () => ({
+  x: r() * 1412,
+  y: r() * 520,
+  s: 0.5 + r() * 1.3,
+  o: 0.25 + r() * 0.65,
+  d: (r() * 6).toFixed(1),
+}));
+const r2 = rand(31);
+const vstars = Array.from({ length: 40 }, () => ({ x: r2() * 698, y: r2() * 230, s: 0.4 + r2(), o: 0.2 + r2() * 0.6 }));
+---
+
+{
+  kind === 'sky' && (
+    <svg class={cls} viewBox="0 0 1412 1001" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky-g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#081430" />
+          <stop offset="0.38" stop-color="#14306a" />
+          <stop offset="0.68" stop-color="#3a6bb0" />
+          <stop offset="0.86" stop-color="#86afe0" />
+          <stop offset="1" stop-color="#c9dcf2" />
+        </linearGradient>
+        <radialGradient id="moon-g">
+          <stop offset="0" stop-color="#fff6dc" stop-opacity="0.55" />
+          <stop offset="1" stop-color="#fff6dc" stop-opacity="0" />
+        </radialGradient>
+        <filter id="cloud-blur" x="-20%" y="-50%" width="140%" height="200%">
+          <feGaussianBlur stdDeviation="18" />
+        </filter>
+      </defs>
+      <rect width="1412" height="1001" fill="url(#sky-g)" />
+      <g class="stars">
+        {stars.map((s) => (
+          <circle cx={s.x.toFixed(1)} cy={s.y.toFixed(1)} r={s.s.toFixed(2)} fill="#fff" opacity={s.o.toFixed(2)} style={`--d:${s.d}s`} />
+        ))}
+      </g>
+      <circle cx="1150" cy="168" r="120" fill="url(#moon-g)" />
+      <circle cx="1150" cy="168" r="30" fill="#fff4d6" />
+      <circle cx="1161" cy="160" r="26" fill="#14306a" opacity="0.18" />
+      <g filter="url(#cloud-blur)" fill="#dbe8fb">
+        <ellipse cx="260" cy="430" rx="260" ry="34" opacity="0.18" />
+        <ellipse cx="1040" cy="380" rx="300" ry="30" opacity="0.14" />
+        <ellipse cx="720" cy="520" rx="420" ry="40" opacity="0.2" />
+      </g>
+      <path d="M0 700 C 160 640 260 655 380 690 S 640 620 780 660 S 1060 610 1200 650 S 1360 640 1412 655 V1001 H0Z" fill="#2c5491" opacity="0.55" />
+      <path d="M0 760 C 200 720 330 735 470 760 S 760 700 930 735 S 1230 705 1412 730 V1001 H0Z" fill="#244677" opacity="0.7" />
+    </svg>
+  )
+}
+
+{
+  kind === 'hills' && (
+    <svg class={cls} viewBox="0 0 1412 401" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="hill-a" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1b3766" />
+          <stop offset="1" stop-color="#10234a" />
+        </linearGradient>
+        <linearGradient id="hill-b" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#132a52" />
+          <stop offset="1" stop-color="#0a1733" />
+        </linearGradient>
+        <radialGradient id="window-glow">
+          <stop offset="0" stop-color="#ffd27a" stop-opacity="0.7" />
+          <stop offset="1" stop-color="#ffd27a" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <path d="M0 150 C 180 96 300 118 420 140 C 530 160 630 196 720 196 C 830 196 1010 98 1140 92 C 1260 88 1350 110 1412 128 V401 H0Z" fill="url(#hill-a)" />
+      <path d="M0 230 C 260 190 420 205 560 222 C 700 238 760 236 860 226 C 1040 206 1230 200 1412 214 V401 H0Z" fill="url(#hill-b)" />
+      <g transform="translate(1110 50)">
+        <circle cx="26" cy="40" r="60" fill="url(#window-glow)" class="glow" />
+        <path d="M0 34 L26 12 L52 34 V64 H0Z" fill="#0c1b3a" />
+        <path d="M-4 36 L26 9 L56 36" fill="none" stroke="#0c1b3a" stroke-width="5" stroke-linejoin="round" />
+        <rect x="9" y="40" width="12" height="11" rx="1.5" fill="#ffd27a" class="window" />
+        <rect x="31" y="40" width="10" height="24" rx="1.5" fill="#0a1630" />
+        <path d="M40 18 V2 M34 6 H46" stroke="#0c1b3a" stroke-width="2" />
+        <circle cx="40" cy="2" r="2" fill="#5ee39a" class="led" />
+      </g>
+      <g fill="#0b1834">
+        <path d="M1040 136 l10 -34 l10 34Z" />
+        <path d="M1058 132 l8 -26 l8 26Z" />
+        <path d="M1206 108 l11 -38 l11 38Z" />
+        <path d="M120 140 l9 -30 l9 30Z" />
+        <path d="M140 136 l7 -24 l7 24Z" />
+      </g>
+    </svg>
+  )
+}
+
+{
+  kind === 'valley' && (
+    <svg class={cls} viewBox="0 0 698 601" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="val-g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0d1d40" />
+          <stop offset="0.5" stop-color="#2d5ea6" />
+          <stop offset="0.82" stop-color="#9cc0ea" />
+          <stop offset="1" stop-color="#d7e5f6" />
+        </linearGradient>
+      </defs>
+      <rect width="698" height="601" fill="url(#val-g)" />
+      {vstars.map((s) => <circle cx={s.x.toFixed(1)} cy={s.y.toFixed(1)} r={s.s.toFixed(2)} fill="#fff" opacity={s.o.toFixed(2)} />)}
+      <path d="M0 360 L90 290 L150 320 L250 230 L330 300 L420 250 L520 320 L600 270 L698 330 V601 H0Z" fill="#3a68ad" opacity="0.55" />
+      <path d="M0 420 L110 350 L200 395 L300 330 L410 400 L520 352 L620 405 L698 380 V601 H0Z" fill="#284f8c" opacity="0.8" />
+    </svg>
+  )
+}
+
+{
+  kind === 'valley-fg' && (
+    <svg class={cls} viewBox="0 0 698 301" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 150 C 120 112 240 132 340 150 C 450 170 560 150 698 128 V301 H0Z" fill="#17345f" />
+      <path d="M0 210 C 160 182 300 196 420 210 C 540 224 620 214 698 200 V301 H0Z" fill="#0d1f40" />
+    </svg>
+  )
+}

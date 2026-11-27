@@ -7,6 +7,7 @@ import UserNotifications
 public struct SettingsView: View {
     @Bindable var prefs: Preferences
     let monitor: Monitor
+    let updater: Updater
     @Binding var launchAtLogin: Bool
     let version: String
     let close: () -> Void
@@ -20,10 +21,11 @@ public struct SettingsView: View {
     @State private var notificationsAllowed: Bool?
     @State private var languageAtOpen: AppLanguage?
 
-    public init(prefs: Preferences, monitor: Monitor, launchAtLogin: Binding<Bool>, version: String,
+    public init(prefs: Preferences, monitor: Monitor, updater: Updater, launchAtLogin: Binding<Bool>, version: String,
                 initialTab: SettingsTab = .general, close: @escaping () -> Void, restart: @escaping () -> Void) {
         self.prefs = prefs
         self.monitor = monitor
+        self.updater = updater
         self._launchAtLogin = launchAtLogin
         self.version = version
         self.close = close
@@ -113,6 +115,17 @@ extension SettingsView {
             GreenToggle(isOn: $launchAtLogin)
         }
         RowDivider()
+        SettingRow(title: L("Check for updates automatically"), detail: updateDetail) {
+            HStack(spacing: 8) {
+                if let release = updater.available {
+                    PillButton(title: L("Download")) { NSWorkspace.shared.open(release.downloadURL ?? release.pageURL) }
+                } else {
+                    PillButton(title: L("Check Now"), disabled: updater.status == .checking) { Task { await updater.check() } }
+                }
+                GreenToggle(isOn: $prefs.autoCheckUpdates)
+            }
+        }
+        RowDivider()
         SettingRow(title: L("Panel shortcut"), detail: L("⌃⌥⌘P shows or hides the panel from any app")) {
             GreenToggle(isOn: $prefs.panelShortcut)
         }
@@ -125,6 +138,16 @@ extension SettingsView {
             PillPicker(selection: Binding(get: { pausedHoursOption }, set: { v in
                 prefs.notificationsPausedUntil = v == 0 ? nil : Date().addingTimeInterval(Double(v) * 3600)
             }), options: [(0, L("Off")), (1, L("1 hour")), (8, L("8 hours")), (24, L("24 hours"))])
+        }
+    }
+
+    private var updateDetail: String {
+        switch updater.status {
+        case .idle: L("Looks for a new release on GitHub once a day")
+        case .checking: L("Checking GitHub…")
+        case .upToDate: L("Pulse \(updater.current?.description ?? "") is up to date")
+        case .available(let r): L("Pulse \(r.version.description) is available")
+        case .failed(let text): text
         }
     }
 
@@ -372,24 +395,6 @@ extension SettingsView {
             }
             .padding(.top, 4)
         }
-        .padding(.top, 40)
-        .frame(maxWidth: .infinity)
-    }
-}
-
-/// Live, looping preview of a menu bar character for the settings row.
-struct SpritePreview: View {
-    let kind: MenuAnimation
-
-    var body: some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 15.0, paused: kind == .none)) { context in
-            let phase = context.date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: 1.4) / 1.4
-            Image(nsImage: NSImage(size: MenuBarSprites.size, flipped: false) { r in
-                MenuBarSprites.draw(kind, phase: phase, health: .systemGreen, in: r)
-                return true
-            })
-        }
-        .frame(width: MenuBarSprites.size.width, height: MenuBarSprites.size.height)
-        .opacity(kind == .none ? 0 : 1)
+        .padding(.top, 40).frame(maxWidth: .infinity)
     }
 }

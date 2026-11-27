@@ -1,0 +1,7 @@
+node_modules
+.astro
+test-results
+playwright-report
+deploy/tunnel.env
+src
+tests

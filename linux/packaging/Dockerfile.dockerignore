@@ -1,0 +1,4 @@
+*
+!linux/
+!app/Packages/PulseKit/Tests/PulseCoreTests/Fixtures/
+linux/**/__pycache__

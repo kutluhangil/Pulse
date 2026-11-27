@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.kutluhangil.Pulse</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Pulse</name>
+  <summary>Live status of your home server</summary>
+  <developer id="io.github.kutluhangil"><name>Kutluhan Gül</name></developer>
+  <description>
+    <p>Pulse shows a server running the Pulse agent in real time: health score, CPU, temperature,
+      memory, disk, network, fan, Docker containers and site checks. It sits in the tray and
+      sends a desktop notification when something needs attention.</p>
+    <p>The agent is a small Go service you run on the server with Docker; Pulse talks to it over
+      Tailscale with a token, nothing is exposed to the internet.</p>
+  </description>
+  <launchable type="desktop-id">io.github.kutluhangil.Pulse.desktop</launchable>
+  <url type="homepage">https://pulse.kutluhangil.dev</url>
+  <url type="bugtracker">https://github.com/kutluhangil/Pulse/issues</url>
+  <url type="vcs-browser">https://github.com/kutluhangil/Pulse</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/kutluhangil/Pulse/main/docs/design/linux/linux-overview-light.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-11-27"/>
+  </releases>
+</component>

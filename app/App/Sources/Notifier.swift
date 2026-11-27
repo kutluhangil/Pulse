@@ -1,4 +1,6 @@
+import AppKit
 import Foundation
+import PulseClient
 import PulseCore
 import PulseUI
 import UserNotifications
@@ -28,6 +30,19 @@ final class Notifier: NSObject, UNUserNotificationCenterDelegate, @unchecked Sen
         if event.phase == .fired, event.kind != .reboot { content.sound = .default }
         let request = UNNotificationRequest(identifier: "\(event.key)-\(Date().timeIntervalSince1970)", content: content, trigger: nil)
         center.add(request)
+    }
+
+    func postUpdate(_ release: ReleaseInfo) {
+        let content = UNMutableNotificationContent()
+        content.title = String(localized: "Pulse \(release.version.description) is available")
+        content.body = String(localized: "Click to download it from GitHub.")
+        content.userInfo = ["url": (release.downloadURL ?? release.pageURL).absoluteString]
+        center.add(UNNotificationRequest(identifier: "update-\(release.tag)", content: content, trigger: nil))
+    }
+
+    func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        guard let raw = response.notification.request.content.userInfo["url"] as? String, let url = URL(string: raw) else { return }
+        await MainActor.run { _ = NSWorkspace.shared.open(url) }
     }
 
     func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification) async -> UNNotificationPresentationOptions {

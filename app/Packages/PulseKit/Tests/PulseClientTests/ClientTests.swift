@@ -1,6 +1,7 @@
 import Foundation
 import Testing
 @testable import PulseClient
+import PulseCore
 
 @Suite struct SSEParserTests {
     @Test func parsesEventsCommentsAndRetry() {
@@ -45,5 +46,29 @@ import Testing
         #expect(perms == 0o600)
         try TokenStore.save("", at: url)
         #expect(TokenStore.load(at: url) == nil)
+    }
+}
+
+@Suite struct UpdateTests {
+    @Test func comparesVersions() throws {
+        let v = { (s: String) in try #require(AppVersion(s)) }
+        #expect(try v("v0.1.0") == v("0.1"))
+        #expect(try v("0.1.0") < v("0.1.1"))
+        #expect(try v("0.9.9") < v("0.10.0"))
+        #expect(try v("1.3.0-beta.2") == v("1.3"))
+        #expect(AppVersion("nightly") == nil)
+        #expect(AppVersion("") == nil)
+    }
+
+    @Test func parsesLatestRelease() throws {
+        let json = """
+        {"tag_name":"v0.2.0","html_url":"https://github.com/kutluhangil/Pulse/releases/tag/v0.2.0",
+         "assets":[{"name":"pulse-monitor_0.2.0_all.deb","browser_download_url":"https://example.com/a.deb"},
+                   {"name":"Pulse-0.2.0.dmg","browser_download_url":"https://example.com/Pulse-0.2.0.dmg"}]}
+        """
+        let r = try UpdateChecker.parse(Data(json.utf8))
+        #expect(r.version.description == "0.2.0")
+        #expect(r.downloadURL?.lastPathComponent == "Pulse-0.2.0.dmg")
+        #expect(throws: UpdateError.malformed) { try UpdateChecker.parse(Data("{}".utf8)) }
     }
 }

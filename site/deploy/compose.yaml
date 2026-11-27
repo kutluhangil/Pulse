@@ -1,0 +1,31 @@
+# Pulse site on macmini-server. Opens no ports; public only through Cloudflare Tunnel
+# (pulse-site -> pulse.kutluhangil.dev). Install and update: scripts/site-deploy.sh in the Pulse repo.
+name: pulse-site
+services:
+  site:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: pulse-site:latest
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 96m
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:8080/health']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.11.2
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --url http://site:8080
+    env_file: tunnel.env
+    depends_on: [site]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Pulse
+GenericName=Server Monitor
+GenericName[tr]=Sunucu İzleyici
+Comment=Live status of your home server: CPU, temperature, memory, disk, network and Docker
+Comment[tr]=Ev sunucunuzun canlı durumu: işlemci, sıcaklık, bellek, disk, ağ ve Docker
+Exec=pulse-monitor
+Icon=io.github.kutluhangil.Pulse
+Terminal=false
+Categories=System;Monitor;Network;GTK;
+Keywords=server;monitor;docker;homelab;tailscale;
+StartupNotify=true
+SingleMainWindow=true
+X-GNOME-UsesNotifications=true

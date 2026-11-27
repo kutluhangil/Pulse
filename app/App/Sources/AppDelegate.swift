@@ -12,6 +12,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let prefs = Preferences()
     private lazy var monitor = Monitor(config: prefs.serverConfig, alertSettings: prefs.alerts)
     private lazy var notifier = Notifier()
+    private lazy var updater = Updater(currentVersion: Self.shortVersion, prefs: prefs)
     private var statusItem: StatusItemController?
     private var settingsWindow: NSWindow?
     private var logWindows: [String: NSWindow] = [:]
@@ -51,10 +52,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             pauseNotifications: { [weak self] duration in
                 self?.prefs.notificationsPausedUntil = duration.map { Date().addingTimeInterval($0) }
             },
+            checkUpdates: { [weak self] in self?.checkForUpdates() },
             about: { [weak self] in self?.openSettings(tab: .about) },
             quit: { NSApp.terminate(nil) }
         )
-        statusItem = StatusItemController(monitor: monitor, prefs: prefs, panelActions: panelActions, menuActions: menuActions)
+        statusItem = StatusItemController(monitor: monitor, prefs: prefs, updater: updater,
+                                          panelActions: panelActions, menuActions: menuActions)
 
         monitor.onAlerts = { [weak self] events in
             guard let self, !prefs.notificationsPaused else { return }
@@ -63,6 +66,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         notifier.requestAuthorization()
         monitor.start()
+        updater.onNewVersion = { [weak self] release in self?.notifier.postUpdate(release) }
+        updater.start()
         observeShortcut()
 
         if prefs.serverConfig == nil {
@@ -108,7 +113,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             )
             let window = SettingsWindow()
-            let view = SettingsView(prefs: prefs, monitor: monitor, launchAtLogin: launchAtLogin, version: Self.version,
+            let view = SettingsView(prefs: prefs, monitor: monitor, updater: updater, launchAtLogin: launchAtLogin, version: Self.version,
                                     initialTab: tab, close: { [weak window] in window?.close() },
                                     restart: { Self.relaunch() })
             window.contentViewController = NSHostingController(rootView: view)
@@ -119,6 +124,34 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         NSApp.activate()
         settingsWindow?.makeKeyAndOrderFront(nil)
+    }
+
+    /// "Check for Updates…": always answers, unlike the silent daily check.
+    private func checkForUpdates() {
+        Task {
+            let status = await updater.check()
+            let alert = NSAlert()
+            switch status {
+            case .available(let release):
+                alert.messageText = String(localized: "Pulse \(release.version.description) is available")
+                alert.informativeText = String(localized: "You have \(Self.shortVersion). Open the disk image and drag Pulse to Applications.")
+                alert.addButton(withTitle: String(localized: "Download"))
+                alert.addButton(withTitle: String(localized: "Release Notes"))
+                alert.addButton(withTitle: String(localized: "Later"))
+            case .failed(let text):
+                alert.messageText = String(localized: "Could not check for updates")
+                alert.informativeText = text
+            default:
+                alert.messageText = String(localized: "Pulse is up to date")
+                alert.informativeText = String(localized: "Version \(Self.shortVersion) is the latest release.")
+            }
+            NSApp.activate()
+            let answer = alert.runModal()
+            if case .available(let release) = status {
+                if answer == .alertFirstButtonReturn { NSWorkspace.shared.open(release.downloadURL ?? release.pageURL) }
+                if answer == .alertSecondButtonReturn { NSWorkspace.shared.open(release.pageURL) }
+            }
+        }
     }
 
     /// Restart to apply a language change.
@@ -176,6 +209,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         print("Pulse configured for \(address)")
         return 0
+    }
+
+    static var shortVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
     }
 
     static var version: String {

@@ -1,0 +1,268 @@
+---
+// Features, agent, download, questions and footer: short and narrow, after the story.
+import { brandPath } from '../lib/icons';
+import { debFile, links, repo, version } from '../data/release';
+
+const features = [
+  ['Health at a glance', 'One score from 0 to 100 with the reasons behind it: heat, memory, disk, failing containers, pending security updates.'],
+  ['Every second', 'CPU, temperature, memory, disk, network and fan stream once a second, with ten minutes of history behind each graph.'],
+  ['Docker, honestly', 'Every container with state, health, CPU and memory. Click one to read its last lines of log.'],
+  ['Alerts that wait', 'Notifications only after a problem holds for a while, once per episode, with a quiet period after recovery.'],
+  ['Your shortcuts', 'SSH, Portainer, Cockpit and your own sites one click from the menu bar or the tray.'],
+  ['Nothing exposed', 'The agent listens on localhost; Tailscale serves it to your devices only, behind a token. No ports, no cloud.'],
+];
+const faq = [
+  ['What does the server need?', 'Linux with Docker. The agent reads /proc and /sys read-only and talks to Docker through a GET-only socket proxy. It was built on an Ubuntu 24.04 Mac mini from 2012.'],
+  ['Why does macOS warn on first launch?', 'The app is signed ad hoc, without an Apple Developer ID. Right-click Pulse in Applications and choose Open once.'],
+  ['Which Linux desktops show the tray icon?', 'KDE Plasma, and Ubuntu with its AppIndicator extension (on by default). Elsewhere Pulse is a normal window and still sends notifications.'],
+  ['How does it update?', 'Pulse checks GitHub once a day and tells you when a new release is out. You download it yourself; nothing installs behind your back.'],
+];
+---
+
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <header class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">What it shows</p>
+        <h2 id="features-title">Small window, <em>whole machine.</em></h2>
+      </div>
+      <p>Built for one home server and the person who looks after it. No dashboards to assemble, no accounts.</p>
+    </header>
+    <div class="grid">
+      {features.map(([t, d]) => <article data-reveal><h3>{t}</h3><p>{d}</p></article>)}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="agent" aria-labelledby="agent-title">
+  <div class="wrap">
+    <header class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">The agent</p>
+        <h2 id="agent-title">One Go binary, <em>one command.</em></h2>
+      </div>
+      <p>The agent is a few megabytes of standard-library Go in a distroless image. From your computer, one script builds it on the server and serves it on your tailnet.</p>
+    </header>
+    <div class="term" data-reveal>
+      <div class="bar"><i></i><i></i><i></i><span>your computer</span></div>
+      <pre><code><span class="c"># clone, then build and start the agent on the server</span>
+git clone {repo}.git && cd Pulse
+./deploy/deploy.sh               <span class="c"># docker --context &lt;server&gt;, tailscale serve :9123</span>
+./deploy/deploy.sh --copy-token  <span class="c"># paste it into Pulse › Settings › Server</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="download" aria-labelledby="download-title">
+  <div class="wrap">
+    <header class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">Download · {version}</p>
+        <h2 id="download-title">Free, <em>for good.</em></h2>
+      </div>
+      <p>GPL-3.0. The apps and the agent are in one repository; every release carries a disk image, a Linux package and the agent image.</p>
+    </header>
+    <div class="dl">
+      <article data-reveal>
+        <svg viewBox="0 0 24 24"><path d={brandPath('apple')} /></svg>
+        <h3>macOS</h3>
+        <p>macOS 26 or later, Apple silicon and Intel. Menu bar app.</p>
+        <a class="btn" href={links.dmg}>Download .dmg</a>
+      </article>
+      <article data-reveal>
+        <svg viewBox="0 0 24 24"><path d={brandPath('linux')} /></svg>
+        <h3>Linux</h3>
+        <p>Ubuntu 24.04 or newer, Debian 13. GTK 4 and libadwaita, amd64 and arm64.</p>
+        <a class="btn" href={links.deb}>Download .deb</a>
+        <code>sudo apt install ./{debFile}</code>
+      </article>
+      <article data-reveal>
+        <svg viewBox="0 0 24 24"><path d={brandPath('docker')} /></svg>
+        <h3>Agent</h3>
+        <p>Runs on the server in Docker. Linux amd64 and arm64.</p>
+        <a class="btn ghost" href={links.agent}>Setup guide</a>
+        <code>ghcr.io/kutluhangil/pulse-agent</code>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <header class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">Before you <em>install.</em></h2>
+      </div>
+      <p>Anything else, open an issue on GitHub.</p>
+    </header>
+    <div class="faq">
+      {faq.map(([q, a]) => <details data-reveal><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span class="mark"><svg viewBox="0 0 28 28"><rect width="28" height="28" rx="8" fill="#2b62bd" /><path d="M4.5 15h4.2l2.1-5 3.2 9.5 2.6-6.5 1.4 2h5.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>Pulse</span>
+    <p>Made by <a href="https://github.com/kutluhangil">kutluhangil</a>. Health score adapted from <a href="https://github.com/tw93/Mole">Mole</a> by tw93. Scroll story after the Floo.design landing.</p>
+    <a href={repo} class="gh" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d={brandPath('github')} /></svg></a>
+  </div>
+</footer>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .grid article {
+    background: var(--card);
+    padding: 28px 26px 30px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .grid p,
+  .dl p,
+  .faq p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .term {
+    border-radius: 18px;
+    background: #0f1626;
+    color: #dfe7f5;
+    overflow: hidden;
+  }
+  .term .bar {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .term .bar i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+  }
+  .term .bar span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+  }
+  pre {
+    padding: 22px 24px 26px;
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-x: auto;
+  }
+  .c {
+    color: #7d8aa3;
+  }
+  .dl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .dl article {
+    background: var(--card);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 0 0 1px var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dl svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 18px;
+    fill: var(--ink);
+  }
+  .dl p {
+    flex: 1;
+    margin-bottom: 22px;
+  }
+  .dl code {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-3);
+  }
+  .faq {
+    display: grid;
+    gap: 10px;
+  }
+  details {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px var(--line);
+    padding: 20px 24px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    list-style: none;
+  }
+  summary::after {
+    content: '+';
+    float: right;
+    color: var(--ink-3);
+  }
+  details[open] summary::after {
+    content: '–';
+  }
+  .footer {
+    margin-top: 120px;
+    padding: 34px 0 46px;
+    border-top: 1px solid var(--line);
+  }
+  .footer .wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 600;
+  }
+  .mark svg {
+    width: 24px;
+    height: 24px;
+  }
+  .footer p {
+    flex: 1;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .gh svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--ink-2);
+  }
+  @media (max-width: 900px) {
+    .grid,
+    .dl {
+      grid-template-columns: 1fr;
+    }
+    .footer .wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

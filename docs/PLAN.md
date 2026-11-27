@@ -326,3 +326,17 @@ Her faz sonunda: testler yeşil, kısa doğrulama raporu. **Commit/push yalnız 
 4. **Erişim yalnız Tailscale** — internetten (Cloudflare) erişim yok; Mac her zaman tailnet'te.
 5. **Port 9123**, adres `https://macmini-server.taild883a6.ts.net:9123`.
 6. **Bundle ID** `com.kutluhangul.pulse`, minimum macOS 26.
+
+## 9. v0.1 yayın planı (2026-11-27): Linux, güncelleme denetimi, yayınlar, site, README
+
+Kutluhan'ın isteği: Linux sürümü (Linux tarzı tasarım), "Check for Updates", GitHub sürümleri (DMG + Linux),
+Floo tarzı kaydırma hikâyeli tanıtım sitesi (Perde sitesi altyapısıyla, tıklanabilir uygulama turu), Perde tarzı README.
+
+| Faz | İş | Karar / gerekçe |
+|---|---|---|
+| A | Güncelleme denetimi (macOS) | GitHub `releases/latest`, sürüm karşılaştırma `PulseCore.Version`; menüde "Check for Updates" gerçek denetim, günlük otomatik denetim (Ayarlar › General), bildirim + menüde "Update to x.y.z". Kurulum elle (DMG), Sparkle yok: ad-hoc imzada EdDSA zinciri kurmaya değmez. |
+| B | Linux uygulaması `linux/` | **Python 3.12 + GTK4 + libadwaita (PyGObject)**: GNOME HIG, Ubuntu 24.04'te hazır paketler (`gir1.2-adw-1`), derleme yok, `.deb` mimariden bağımsız (`all`). Flutter (Perde yolu) macOS görünümünü kopyalamak içindi; burada istenen Linux'un kendi dili. Tepsi: StatusNotifierItem + dbusmenu, Gio.DBus ile elle (GTK4'te `GtkStatusIcon` yok, `libayatana-appindicator` GTK3'e bağlı). Ubuntu'nun AppIndicator eklentisi ve KDE gösterir; tepsi yoksa uygulama normal pencere olarak çalışır. Token `libsecret`, yoksa `~/.config/pulse/token` (0600). Çeviri macOS'un `l10n/tr.json` dosyasından. |
+| C | Linux paketleme ve test | Docker'da Ubuntu 24.04: `pytest` + `.deb` (dpkg-deb) + Xvfb ekran görüntüsü (Adwaita, `GSK_RENDERER=cairo`). Gerçek Ubuntu masaüstünde deneme Kutluhan'la. |
+| D | GitHub sürümü v0.1.0 (ilk yayın) | `Pulse-0.1.0.dmg` (ad-hoc, `scripts/release-macos.sh`), `pulse-monitor_0.1.0_all.deb`, ajan imajı `ghcr.io/kutluhangil/pulse-agent` (etiketle `release-agent.yml`). `release-linux.yml` CI'da .deb üretir. |
+| E | Site `site/` → `pulse.kutluhangil.dev` | Perde sitesinin altyapısı (Astro 7, nginx-unprivileged, Cloudflare Tunnel `pulse-site`), tasarım mimarisi Floo kaydırma hikâyesi: yüklenince gökyüzü açılır, başlık satır satır iner, kaydırınca hero başlığa katlanır ve sekmeli demo oynar. React yok; Floo bileşeninin zaman çizelgesi saf TypeScript'e taşındı, görseller Pulse'a özgü SVG (fotoğraf/Floo varlığı yok). Canlı veri **simülasyon**: ajan internete açılmaz (kural). Tıklanabilir tur: panel (macOS) ve pencere (Linux) iframe'de, sistem seçicili. |
+| F | README + About | Perde README kalıbı: hero SVG, rozetler, italik iki satır, tıklanabilir ekran (siteye/tura), bölümler, Türkçe özet. About İngilizce, homepage site. |

@@ -61,6 +61,9 @@ public final class Preferences {
     public var sshTarget: String { didSet { defaults.set(sshTarget, forKey: Keys.ssh) } }
     public var portainerURL: String { didSet { defaults.set(portainerURL, forKey: Keys.portainer) } }
     public var cockpitURL: String { didSet { defaults.set(cockpitURL, forKey: Keys.cockpit) } }
+    public var autoCheckUpdates: Bool { didSet { defaults.set(autoCheckUpdates, forKey: Keys.autoUpdates) } }
+    public var lastUpdateCheck: Date? { didSet { defaults.set(lastUpdateCheck, forKey: Keys.lastUpdateCheck) } }
+    public var notifiedUpdateTag: String? { didSet { defaults.set(notifiedUpdateTag, forKey: Keys.notifiedUpdate) } }
     public var language: AppLanguage {
         didSet {
             defaults.set(language.rawValue, forKey: Keys.language)
@@ -88,6 +91,9 @@ public final class Preferences {
         static let portainer = "portainerURL"
         static let cockpit = "cockpitURL"
         static let language = "language"
+        static let autoUpdates = "autoCheckUpdates"
+        static let lastUpdateCheck = "lastUpdateCheck"
+        static let notifiedUpdate = "notifiedUpdateTag"
     }
 
     public static let maxMenuFields = 3
@@ -109,6 +115,9 @@ public final class Preferences {
         sshTarget = defaults.string(forKey: Keys.ssh) ?? ""
         portainerURL = defaults.string(forKey: Keys.portainer) ?? ""
         cockpitURL = defaults.string(forKey: Keys.cockpit) ?? ""
+        autoCheckUpdates = defaults.object(forKey: Keys.autoUpdates) as? Bool ?? true
+        lastUpdateCheck = defaults.object(forKey: Keys.lastUpdateCheck) as? Date
+        notifiedUpdateTag = defaults.string(forKey: Keys.notifiedUpdate)
         language = defaults.string(forKey: Keys.language).flatMap(AppLanguage.init) ?? .system
     }
 

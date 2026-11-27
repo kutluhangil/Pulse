@@ -12,6 +12,7 @@ final class StatusItemController: NSObject {
     private let monitor: Monitor
     private let prefs: Preferences
     private let actions: MenuActions
+    private let updater: Updater
     private let panel: PanelWindow
     private var outsideClickMonitor: Any?
     private var animationTimer: Timer?
@@ -25,9 +26,10 @@ final class StatusItemController: NSObject {
         return img
     }()
 
-    init(monitor: Monitor, prefs: Preferences, panelActions: PanelActions, menuActions: MenuActions) {
+    init(monitor: Monitor, prefs: Preferences, updater: Updater, panelActions: PanelActions, menuActions: MenuActions) {
         self.monitor = monitor
         self.prefs = prefs
+        self.updater = updater
         actions = menuActions
         panel = PanelWindow { PanelView(monitor: monitor, prefs: prefs, actions: panelActions) }
         super.init()
@@ -145,7 +147,8 @@ final class StatusItemController: NSObject {
     func showMenu() {
         closePanel()
         guard let button = item.button else { return }
-        let menu = StatusMenu.build(monitor: monitor, prefs: prefs, actions: actions, openPanel: { [weak self] in self?.openPanel() })
+        let menu = StatusMenu.build(monitor: monitor, prefs: prefs, updater: updater, actions: actions,
+                                    openPanel: { [weak self] in self?.openPanel() })
         menu.popUp(positioning: nil, at: NSPoint(x: 0, y: button.bounds.height + 4), in: button)
     }
 }

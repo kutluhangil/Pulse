@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+# Pulse for Linux launcher, installed as /usr/bin/pulse-monitor by the .deb.
+import sys
+
+sys.path.insert(0, "/usr/lib/pulse-monitor")
+from pulse_monitor.ui.app import main  # noqa: E402
+
+sys.exit(main())

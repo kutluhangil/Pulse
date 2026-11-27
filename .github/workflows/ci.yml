@@ -46,3 +46,13 @@ jobs:
         run: |
           xcodegen generate
           xcodebuild -project Pulse.xcodeproj -scheme Pulse -configuration Release -derivedDataPath build/DerivedData -quiet build
+
+  linux:
+    name: Linux app (Python, GTK 4)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends python3-gi python3-gi-cairo python3-pytest gir1.2-gtk-4.0 gir1.2-adw-1 dpkg-dev
+      - run: cp -R app/Packages/PulseKit/Tests/PulseCoreTests/Fixtures linux/tests/fixtures
+      - run: cd linux && python3 -m pytest -q tests
+      - run: linux/packaging/build-deb.sh ci dist && dpkg-deb --info dist/pulse-monitor_ci_all.deb

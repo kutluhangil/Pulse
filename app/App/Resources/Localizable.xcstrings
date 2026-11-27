@@ -11,12 +11,22 @@
         }
       }
     },
-    "Check for Updates": {
+    "Check for Updates…": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Güncellemeleri denetle"
+            "value": "Güncellemeleri denetle…"
+          }
+        }
+      }
+    },
+    "Click to download it from GitHub.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub'dan indirmek için tıklayın."
           }
         }
       }
@@ -41,6 +51,26 @@
         }
       }
     },
+    "Could not check for updates": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler denetlenemedi"
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndir"
+          }
+        }
+      }
+    },
     "For 1 Hour": {
       "localizations": {
         "tr": {
@@ -57,6 +87,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "8 saat"
+          }
+        }
+      }
+    },
+    "Later": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonra"
           }
         }
       }
@@ -91,12 +131,32 @@
         }
       }
     },
+    "Pulse %@ is available": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse %@ çıktı"
+          }
+        }
+      }
+    },
     "Pulse Settings": {
       "localizations": {
         "tr": {
           "stringUnit": {
             "state": "translated",
             "value": "Pulse Ayarları"
+          }
+        }
+      }
+    },
+    "Pulse is up to date": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse güncel"
           }
         }
       }
@@ -117,6 +177,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yeniden bağlan"
+          }
+        }
+      }
+    },
+    "Release Notes": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm notları"
           }
         }
       }
@@ -157,6 +227,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yarın sabaha kadar"
+          }
+        }
+      }
+    },
+    "Update to Pulse %@…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulse %@ sürümüne güncelle…"
+          }
+        }
+      }
+    },
+    "Version %@ is the latest release.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ en son sürüm."
+          }
+        }
+      }
+    },
+    "You have %@. Open the disk image and drag Pulse to Applications.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sizdeki sürüm %@. Disk görüntüsünü açıp Pulse'u Uygulamalar'a sürükleyin."
           }
         }
       }
