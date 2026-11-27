@@ -33,7 +33,7 @@ cp -R "$APP" "$STAGE/"
 ln -s /Applications "$STAGE/Applications"
 rm -f "$DMG"
 hdiutil create -quiet -volname "Pulse $VERSION" -srcfolder "$STAGE" -format UDZO "$DMG"
-shasum -a 256 "$DMG" | tee "$DMG.sha256"
+(cd dist && shasum -a 256 "${DMG##*/}" | tee "${DMG##*/}.sha256")
 
 if [[ "${1:-}" == "--install" ]]; then
   echo "==> Installing to /Applications"
